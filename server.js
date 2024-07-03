@@ -4,19 +4,27 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 
+// Adding body parser
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
+
 // Import Db from db.js
 const db = require("./db");
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("Helloworld");
-});
 
 // Imporrting Routes
-const test = require("./routes/test.js");
+const menuRoutes = require("./routes/menuRoutes.js");
 
-app.use("/res", test);
+app.use("/menu", menuRoutes);
+app.use("/getmenu", menuRoutes);
+app.use("/updatemenu", menuRoutes);
+app.use("/deletemenu", menuRoutes);
+
+// Paremetrized accessing the routes
+
+
 
 app.listen(PORT, () => {
   console.log("server is running on port", { PORT });
