@@ -22,7 +22,9 @@ app.use("/getmenu", menuRoutes);
 app.use("/updatemenu", menuRoutes);
 app.use("/deletemenu", menuRoutes);
 
+// Paremetrized accessing the routes
 
+app.use("/menu/:categoryType", menuRoutes);
 
 
 

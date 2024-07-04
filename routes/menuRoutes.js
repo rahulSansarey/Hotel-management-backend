@@ -60,7 +60,22 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// Parametrized access routes
 
+router.get("/:categoryType", async function (req, res) {
+  try {
+    const categoryType = req.params.categoryType;
+    if (categoryType == "veg" || categoryType == "nonveg") {
+      const onlyCategory = await hotelList.find({ category: categoryType });
+      console.log("List found");
+      res.status(200).json( onlyCategory);
+    }else{
+      res.status(200).json({error: "Invalid Category Type"})
+    }
+  } catch (error) {
+    res.status(404).json({ message: "Internal server error" });
+  }
+});
 
 
 
