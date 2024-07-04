@@ -50,7 +50,7 @@ To delete the data;
 ```
 
 
-To access the data as a Parametrized way only category like I can access on veg items or nonveg Items;
+To access the data as a Parametrized way only category like I can access veg items or nonveg Items;
 get method
 ```bash
  http://localhost:3000/menu/nonveg
