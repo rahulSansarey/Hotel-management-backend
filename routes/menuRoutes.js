@@ -60,12 +60,8 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// Parametrized access routes
 
-router.get("/:category", function (req, res) {
-  try {
-    conr
-  } catch (error) {}
-});
+
+
 
 module.exports = router;

@@ -22,7 +22,7 @@ const menu = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ["veg", "nonveg"],
+    enum: ["veg", "nonveg",],
   },
   taste: {
     type: String,
